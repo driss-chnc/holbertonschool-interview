@@ -24,13 +24,13 @@ def main():
             line_count += 1
             parts = line.split()
 
-            if len(parts) < 9:
+            if len(parts) < 7:
                 continue
 
             try:
                 status = int(parts[-2])
                 file_size = int(parts[-1])
-            except (ValueError, IndexError):
+            except ValueError:
                 continue
 
             if status not in valid_codes:
@@ -45,6 +45,9 @@ def main():
     except KeyboardInterrupt:
         print_stats(total_size, status_codes)
         raise
+
+    if line_count % 10 != 0:
+        print_stats(total_size, status_codes)
 
 
 if __name__ == "__main__":
