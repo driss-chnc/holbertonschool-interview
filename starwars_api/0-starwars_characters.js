@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-function get(url) {
+function get (url) {
   return new Promise((resolve, reject) => {
     request(url, (error, response, body) => {
       if (error) {
@@ -16,7 +16,7 @@ function get(url) {
   });
 }
 
-async function main() {
+async function main () {
   const filmId = process.argv[2];
   const filmUrl = `https://swapi-api.hbtn.io/api/films/${filmId}/`;
 
@@ -31,7 +31,7 @@ async function main() {
       console.log(character.name);
     }
   } catch (error) {
-    return;
+
   }
 }
 
