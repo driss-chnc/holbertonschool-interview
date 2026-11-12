@@ -2,6 +2,7 @@
 """Module for the prime game function."""
 
 def isWinner(x, nums):
+    """Determines the winner of the prime game."""
     if not nums or x < 1:
         return None
 
